@@ -5,19 +5,15 @@ import com.freework.taskmaster.exceptions.UserNotFoundException;
 import com.freework.taskmaster.exceptions.UsernameAlreadyExistsException;
 import com.freework.taskmaster.model.LoginModel;
 import com.freework.taskmaster.model.RegisterUserModel;
-import com.freework.taskmaster.model.Response;
 import com.freework.taskmaster.model.UserModel;
 import com.freework.taskmaster.repository.UserRepository;
-import java.time.LocalDateTime;
-import java.util.HashMap;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import static com.freework.taskmaster.service.ResponseMessages.*;
 @Service
-public class UserServiceImpl {
+public class AuthServiceImpl {
 
     @Autowired
     private UserRepository userRepository;

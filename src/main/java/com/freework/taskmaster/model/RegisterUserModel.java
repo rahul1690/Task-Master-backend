@@ -1,6 +1,7 @@
 package com.freework.taskmaster.model;
 
 import com.freework.taskmaster.entity.RoleEntity;
+import com.freework.taskmaster.entity.UserEntity;
 import com.freework.taskmaster.exceptions.EmptyRoleException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -26,15 +27,11 @@ public class RegisterUserModel {
     private String lastName;
     @Email
     private String email;
+    @NotEmpty
     private String mobile;
     private String designation;
-    @Setter(AccessLevel.NONE) private RoleModel role;
 
-    public void setRole(RoleModel role){
-        if(role==null || role.getId()==null){
-            throw new EmptyRoleException("Role Should Not Be Empty");
-        }
-        this.role= role;
-    }
+    private RoleModel role;
+    private UserModel admin;
 
 }

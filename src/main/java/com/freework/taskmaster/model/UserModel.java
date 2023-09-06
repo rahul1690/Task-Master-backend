@@ -17,4 +17,5 @@ public class UserModel {
     private String mobile;
     private String designation;
     private RoleModel role;
+    private UserModel admin;
 }
