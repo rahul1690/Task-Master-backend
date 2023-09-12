@@ -1,13 +1,11 @@
 package com.freework.taskmaster.serviceImpl;
 
-import static com.freework.taskmaster.service.ResponseMessages.TEAMS_NOT_FOUND;
 import static com.freework.taskmaster.service.ResponseMessages.TEAM_ALREADY_EXIST;
 import static com.freework.taskmaster.service.ResponseMessages.USER_NOT_FOUND;
 
 import com.freework.taskmaster.entity.TeamEntity;
 import com.freework.taskmaster.entity.UserEntity;
 import com.freework.taskmaster.exceptions.TeamAlreadyExistException;
-import com.freework.taskmaster.exceptions.TeamsNotFoundException;
 import com.freework.taskmaster.exceptions.UserNotFoundException;
 import com.freework.taskmaster.model.TeamModel;
 import com.freework.taskmaster.repository.TeamRepository;

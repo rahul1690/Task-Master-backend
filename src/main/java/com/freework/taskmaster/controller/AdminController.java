@@ -22,17 +22,17 @@ public class AdminController {
     AdminServiceImpl adminService;
 
     @GetMapping("/get-users")
-    public Response getAllUsers(@RequestParam String username){
+    public Response<?> getAllUsers(@RequestParam String username){
         return Response.ok().setPayload(adminService.getAllUsers(username));
     }
 
     @PostMapping("/add-user")
-    public Response addUser(@RequestParam String username,@Valid @RequestBody RegisterUserModel registerUserModel){
+    public Response<?> addUser(@RequestParam String username,@Valid @RequestBody RegisterUserModel registerUserModel){
         return Response.ok().setPayload(adminService.addUser(username,registerUserModel));
     }
 
-    @DeleteMapping("delete-user/{userId}")
-    public Response deleteUser(@PathVariable Long userId){
+    @DeleteMapping("/delete-user/{userId}")
+    public Response<?> deleteUser(@PathVariable Long userId){
         return Response.ok().setResponse(Response.responseMessage("success",adminService.deleteUser(userId)));
     }
 }

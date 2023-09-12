@@ -22,12 +22,12 @@ public class TeamController {
     private TeamServiceImpl teamService;
 
     @PostMapping("/create-team")
-    public Response createTeam(@Valid @RequestBody TeamModel teamModel,@RequestParam String username){
+    public Response<?> createTeam(@Valid @RequestBody TeamModel teamModel,@RequestParam String username){
         return Response.ok().setPayload(teamService.createTeam(teamModel,username)).setResponse(Response.responseMessage("success",TEAM_CREATED));
     }
 
     @GetMapping("/get-teams")
-    public Response getAllTeams(@RequestParam String username){
+    public Response<?> getAllTeams(@RequestParam String username){
         return Response.ok().setPayload(teamService.findAllTeamsByAdmin(username));
     }
 
