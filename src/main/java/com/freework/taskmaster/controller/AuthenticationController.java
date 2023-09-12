@@ -24,7 +24,7 @@ public class AuthenticationController {
     private AuthServiceImpl userService;
 
     @PostMapping("/register")
-    public Response registerUser(@Valid @RequestBody RegisterUserModel registerUserModel){
+    public Response<?> registerUser(@Valid @RequestBody RegisterUserModel registerUserModel){
         try {
             RoleModel role = registerUserModel.getRole();
             if(role==null || role.getId()== null){
@@ -39,7 +39,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public Response authenticateUser(@Valid @RequestBody LoginModel loginModel){
+    public Response<?> authenticateUser(@Valid @RequestBody LoginModel loginModel){
         return Response.ok().setPayload(userService.authenticateUser(loginModel));
     }
 }
